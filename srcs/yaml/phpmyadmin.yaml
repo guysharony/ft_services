@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-svc
+  labels:
+    app: phpmyadmin-app
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    nodePort: 5000
+    protocol: TCP
+    name: http
+  selector:
+    app: phpmyadmin-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-deployment
+  labels:
+    app: phpmyadmin-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin-app
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin-app
+    spec:
+      containers:
+      - name: phpmyadmin
+        image: services/phpmyadmin
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Never
+        env:
+          - name: DB_NAME
+            value: phpmyadmin
+          - name: DB_USER
+            value: wp_admin
+          - name: DB_PASSWORD
+            value: admin
+          - name: DB_HOST
+            value: mysql-svc
