@@ -17,17 +17,8 @@ else
 	exit 1
 fi
 
-echo " > Cleaning virtual machines."
-vms=$((`VBoxManage list vms | grep "minikube" | wc -l` + 0))
-until [ $vms -lt 1 ]
-do
-	VBoxManage controlvm minikube poweroff &> /dev/null
-	VBoxManage unregistervm minikube &> /dev/null
-	((vms--))
-done
-
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=virtualbox --extra-config=apiserver.service-node-port-range=1-35000
+if minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000
 then
 	echo " > Minikube started successfully."
 else
