@@ -5,13 +5,15 @@ metadata:
   labels:
     app: nginx-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
+    targetPort: 80
     nodePort: 80
     protocol: TCP
     name: http
   - port: 443
+    targetPort: 443
     nodePort: 443
     protocol: TCP
     name: https

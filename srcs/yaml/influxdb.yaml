@@ -5,7 +5,7 @@ metadata:
   labels:
     app: influxdb-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8086
     nodePort: 8086

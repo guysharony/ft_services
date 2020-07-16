@@ -5,7 +5,7 @@ metadata:
   labels:
     app: phpmyadmin-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 5000
     nodePort: 5000
