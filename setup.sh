@@ -49,19 +49,14 @@ fi
 
 eval $(minikube docker-env)
 
-echo -e "\nDocker:"
+minikube addons enable metallb
+
+kubectl apply -f srcs/yaml/config-metallb.yaml
+
 ft_deployment nginx
-#ft_deployment mysql
-#ft_deployment wordpress
-#ft_deployment phpmyadmin
-#ft_deployment influxdb
-#ft_deployment grafana
-#ft_deployment ftps
-
-#kubectl expose deployment nginx-deployment \
-#	--name=nginx-service --type=LoadBalancer
-
-#kubectl apply -f srcs/yaml/namespace.yaml
-#kubectl apply -f srcs/yaml/metallb.yaml
-
-#kubectl create -f srcs/yaml/config.yaml
+ft_deployment mysql
+ft_deployment wordpress
+ft_deployment phpmyadmin
+ft_deployment influxdb
+ft_deployment grafana
+ft_deployment ftps
