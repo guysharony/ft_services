@@ -6,6 +6,7 @@ metadata:
     app: wordpress-app
 spec:
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.7
   ports:
   - port: 5050
     nodePort: 5050

@@ -6,6 +6,7 @@ metadata:
     app: phpmyadmin-app
 spec:
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.8
   ports:
   - port: 5000
     nodePort: 5000

@@ -6,6 +6,7 @@ metadata:
     app: mysql-app
 spec:
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.6
   ports:
   - port: 3306
     nodePort: 3306

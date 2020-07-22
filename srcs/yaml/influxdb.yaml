@@ -6,6 +6,7 @@ metadata:
     app: influxdb-app
 spec:
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.9
   ports:
   - port: 8086
     nodePort: 8086
