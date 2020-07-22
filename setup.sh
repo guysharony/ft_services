@@ -39,7 +39,7 @@ else
 fi
 
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=virtualbox --extra-config=apiserver.service-node-port-range=1-35000
+if minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000
 then
 	echo " > Minikube started successfully."
 else
@@ -49,7 +49,11 @@ fi
 
 eval $(minikube docker-env)
 
-minikube addons enable metallb
+kubectl apply -f srcs/yaml/namespace.yaml
+
+kubectl apply -f srcs/yaml/metallb.yaml
+
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
 kubectl apply -f srcs/yaml/config-metallb.yaml
 
