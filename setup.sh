@@ -49,14 +49,17 @@ fi
 
 eval $(minikube docker-env)
 
-kubectl apply -f srcs/yaml/namespace.yaml
+echo ""
+echo "MetalLB"
+echo " > Installing metalLB."
+kubectl apply -f srcs/yaml/namespace.yaml > /dev/null
+kubectl apply -f srcs/yaml/metallb.yaml > /dev/null
+echo " > Configuring external IP range."
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" > /dev/null
+kubectl apply -f srcs/yaml/config-metallb.yaml > /dev/null
 
-kubectl apply -f srcs/yaml/metallb.yaml
-
-kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-
-kubectl apply -f srcs/yaml/config-metallb.yaml
-
+echo ""
+echo "Deployments"
 ft_deployment nginx
 ft_deployment mysql
 ft_deployment wordpress

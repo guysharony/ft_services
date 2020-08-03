@@ -10,4 +10,4 @@ RUN chmod +x ./data
 
 EXPOSE 8086
 
-CMD tail -f /dev/null
+CMD ./setup.sh
