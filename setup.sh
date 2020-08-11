@@ -46,6 +46,7 @@ else
 	echo " > Can't start minikube."
 	exit 1
 fi
+minikube addons enable dashboard > /dev/null
 
 eval $(minikube docker-env)
 
@@ -67,3 +68,9 @@ ft_deployment phpmyadmin
 ft_deployment influxdb
 ft_deployment grafana
 ft_deployment ftps
+
+echo ""
+echo "Proxy"
+echo " > Starting proxy server for dashboard."
+kubectl proxy
+
