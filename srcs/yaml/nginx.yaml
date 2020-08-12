@@ -8,6 +8,11 @@ spec:
   type: LoadBalancer
   loadBalancerIP: 172.17.0.5
   ports:
+  - port: 22
+    targetPort: 22
+    nodePort: 22
+    protocol: TCP
+    name: ssh
   - port: 80
     targetPort: 80
     nodePort: 80
@@ -43,6 +48,7 @@ spec:
         ports:
         - containerPort: 80
         - containerPort: 443
+        - containerPort: 22
         imagePullPolicy: Never
         env:
           - name: FTP_USER

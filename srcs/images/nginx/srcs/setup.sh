@@ -1,4 +1,4 @@
-apk add nginx openssl
+apk add nginx openssl openssh
 
 adduser -D -g 'www' www
 
@@ -29,4 +29,13 @@ openssl req \
 	-keyout /etc/ssl/private/self-signed.key \
 	-out /etc/ssl/certs/self-signed.crt
 
+chmod 600 ssh_host*
+mv ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
+mv ssh_host_dsa_key /etc/ssh/ssh_host_dsa_key
+
+adduser -D "gsharony"
+
+echo "gsharony:password" | chpasswd
+
+/usr/sbin/sshd
 nginx -g "daemon off;"
