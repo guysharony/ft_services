@@ -9,7 +9,6 @@ spec:
   loadBalancerIP: 172.17.0.10
   ports:
   - port: 3000
-    nodePort: 3000
     protocol: TCP
     name: http
   selector:
@@ -35,13 +34,9 @@ spec:
       - name: grafana
         image: services/grafana
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         imagePullPolicy: Never
         env:
-          - name: FTP_USER
-            value: gsharony
-          - name: FTP_PASSWORD
-            value: password
           - name: DB_NAME
             value: grafana
           - name: DB_USER

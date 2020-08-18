@@ -9,7 +9,6 @@ spec:
   loadBalancerIP: 172.17.0.9
   ports:
   - port: 8086
-    nodePort: 8086
     protocol: TCP
     name: http
   selector:
@@ -38,10 +37,6 @@ spec:
         - containerPort: 8086
         imagePullPolicy: Never
         env:
-          - name: FTP_USER
-            value: gsharony
-          - name: FTP_PASSWORD
-            value: password
           - name: DB_NAME
             value: nginx
           - name: DB_USER

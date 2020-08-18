@@ -9,7 +9,6 @@ spec:
   loadBalancerIP: 172.17.0.6
   ports:
   - port: 3306
-    nodePort: 3306
     protocol: TCP
     name: http
   selector:
