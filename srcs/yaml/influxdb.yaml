@@ -5,14 +5,11 @@ metadata:
   labels:
     app: influxdb-app
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 172.17.0.9
   ports:
   - port: 8086
-    protocol: TCP
-    name: http
   selector:
     app: influxdb-app
+  clusterIP: None
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,12 +33,3 @@ spec:
         ports:
         - containerPort: 8086
         imagePullPolicy: Never
-        env:
-          - name: DB_NAME
-            value: nginx
-          - name: DB_USER
-            value: wp_admin
-          - name: DB_PASSWORD
-            value: admin
-          - name: DB_HOST
-            value: mysql-svc
