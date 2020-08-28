@@ -68,9 +68,3 @@ ft_deployment phpmyadmin
 ft_deployment influxdb
 ft_deployment grafana
 ft_deployment ftps
-
-echo ""
-echo "Proxy"
-echo " > Starting proxy server for dashboard."
-kubectl proxy > /dev/null 2>&1 &
-
