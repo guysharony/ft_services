@@ -28,10 +28,10 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = getenv('MYSQL_SVC_SERVICE_HOST');
+$cfg['Servers'][$i]['host'] = getenv('DB_HOST');
 $cfg['Servers'][$i]['port'] = '3306';
-$cfg['Servers'][$i]['user'] = 'admin';
-$cfg['Servers'][$i]['password'] = 'admin';
+$cfg['Servers'][$i]['user'] = getenv('DB_USER');
+$cfg['Servers'][$i]['password'] = getenv('DB_PASSWORD');
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 

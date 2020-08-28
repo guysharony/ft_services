@@ -5,12 +5,9 @@ metadata:
   labels:
     app: mysql-app
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 172.17.0.6
+  clusterIP: None
   ports:
   - port: 3306
-    protocol: TCP
-    name: http
   selector:
     app: mysql-app
 ---
