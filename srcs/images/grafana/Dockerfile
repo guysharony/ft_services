@@ -1,6 +1,9 @@
 FROM alpine:latest
 
-RUN apk add --no-cache --upgrade bash
+RUN apk add --no-cache --upgrade bash wget php7
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main libc6-compat
+RUN wget https://dl.grafana.com/oss/release/grafana-6.6.0.linux-amd64.tar.gz 
+RUN tar -zxvf grafana-6.6.0.linux-amd64.tar.gz
 
 COPY ./srcs/grafana.db .
 COPY ./srcs/setup.sh .

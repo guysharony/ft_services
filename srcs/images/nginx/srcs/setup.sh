@@ -33,9 +33,9 @@ chmod 600 ssh_host*
 mv ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
 mv ssh_host_dsa_key /etc/ssh/ssh_host_dsa_key
 
-adduser -D "gsharony"
+adduser -D "admin"
 
-echo "gsharony:password" | chpasswd
+echo "admin:admin" | chpasswd
 
 /usr/sbin/sshd
 nginx -g "daemon off;"
