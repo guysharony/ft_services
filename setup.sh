@@ -39,7 +39,7 @@ else
 fi
 
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000
+if minikube start --vm-driver=docker
 then
 	echo " > Minikube started successfully."
 else
