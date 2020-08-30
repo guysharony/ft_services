@@ -2,9 +2,9 @@
 
 ft_deployment()
 {
+	echo " > Creating $1 image."
 	if docker build -t services/$1 srcs/images/$1/ &> /dev/null
 	then
-        	echo " > Creating $1 image."
         	sleep 1
 	else
 	        echo " > Can't create $1 image."
