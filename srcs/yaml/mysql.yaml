@@ -33,12 +33,3 @@ spec:
         ports:
         - containerPort: 3306
         imagePullPolicy: Never
-        env:
-          - name: DB_NAME
-            value: mysql
-          - name: DB_USER
-            value: wp_admin
-          - name: DB_PASSWORD
-            value: admin
-          - name: DB_HOST
-            value: mysql-svc

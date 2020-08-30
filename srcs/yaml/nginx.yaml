@@ -47,16 +47,3 @@ spec:
         - containerPort: 443
         - containerPort: 22
         imagePullPolicy: Never
-        env:
-          - name: FTP_USER
-            value: gsharony
-          - name: FTP_PASSWORD
-            value: password
-          - name: DB_NAME
-            value: nginx
-          - name: DB_USER
-            value: wp_admin
-          - name: DB_PASSWORD
-            value: admin
-          - name: DB_HOST
-            value: mysql-svc
