@@ -11,4 +11,4 @@ RUN chmod +x setup.sh
 
 EXPOSE 5000
 
-CMD ./setup.sh && tail -f /dev/null
+CMD ./setup.sh

@@ -35,6 +35,8 @@ spec:
   selector:
     matchLabels:
       app: mysql-app
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:

@@ -34,6 +34,8 @@ spec:
   selector:
     matchLabels:
       app: nginx-app
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:

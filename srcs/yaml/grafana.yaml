@@ -25,6 +25,8 @@ spec:
   selector:
     matchLabels:
       app: grafana-app
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
