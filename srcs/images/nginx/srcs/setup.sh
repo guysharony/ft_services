@@ -36,6 +36,6 @@ mv ssh_host_dsa_key /etc/ssh/ssh_host_dsa_key
 adduser -D "admin"
 
 echo "admin:admin" | chpasswd
-
+telegraf &
 /usr/sbin/sshd
 nginx -g "daemon off;"
