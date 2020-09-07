@@ -37,12 +37,6 @@ spec:
         image: services/phpmyadmin
         ports:
         - containerPort: 5000
-        livenessProbe:
-          exec:
-            command: 
-            - telegraf
-          initialDelaySeconds: 5
-          periodSeconds: 3
         imagePullPolicy: Never
         env:
           - name: DB_NAME

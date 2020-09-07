@@ -47,12 +47,6 @@ spec:
         image: services/mysql
         ports:
         - containerPort: 3306
-        livenessProbe:
-          exec:
-            command:
-            - telegraf
-          initialDelaySeconds: 5
-          periodSeconds: 3
         imagePullPolicy: Never
         volumeMounts:
         - name: mysql-storage

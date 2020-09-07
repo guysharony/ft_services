@@ -43,13 +43,6 @@ spec:
           value: admin
         - name: FTP_PASSWORD
           value: admin
-        livenessProbe:
-          exec:
-            command:
-            - telegraf
-            - pure-ftpd
-          initialDelaySeconds: 5
-          periodSeconds: 3
         ports:
         - containerPort: 21
           hostPort: 21
