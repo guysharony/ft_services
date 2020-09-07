@@ -39,7 +39,7 @@ spec:
         - containerPort: 5000
         livenessProbe:
           exec:
-            command:
+            command: 
             - telegraf
           initialDelaySeconds: 5
           periodSeconds: 3

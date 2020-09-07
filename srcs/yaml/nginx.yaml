@@ -51,7 +51,6 @@ spec:
         livenessProbe:
           exec:
             command:
-            - nginx
             - telegraf
             - sshd
           initialDelaySeconds: 5
