@@ -1,5 +1,3 @@
-apk add nginx openssl openssh
-
 adduser -D -g 'www' www
 
 mkdir /www
@@ -36,6 +34,6 @@ mv ssh_host_dsa_key /etc/ssh/ssh_host_dsa_key
 adduser -D "admin"
 
 echo "admin:admin" | chpasswd
-telegraf &
-/usr/sbin/sshd
+/etc/init.d/telegraf start
+/etc/init.d/sshd start
 nginx -g "daemon off;"
