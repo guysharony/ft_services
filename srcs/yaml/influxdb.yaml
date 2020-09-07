@@ -52,6 +52,12 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        livenessProbe:
+          exec:
+            command:
+            - telegraf
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 8086
         imagePullPolicy: Never

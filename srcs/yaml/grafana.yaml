@@ -35,6 +35,12 @@ spec:
       containers:
       - name: grafana
         image: services/grafana
+        livenessProbe:
+          exec:
+            command:
+            - telegraf
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 3000
         imagePullPolicy: Never
