@@ -51,17 +51,8 @@ spec:
         livenessProbe:
           exec:
             command:
-            - service
-            - sshd
-            - status
-          initialDelaySeconds: 3
-          periodSeconds: 1
-        livenessProbe:
-          exec:
-            command:
-            - service
-            - telegraf
-            - status
+            - /bin/sh
+            - /service.sh
           initialDelaySeconds: 3
           periodSeconds: 1
         imagePullPolicy: Never
