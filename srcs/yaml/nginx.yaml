@@ -54,14 +54,14 @@ spec:
             - service
             - sshd
             - status
-          initialDelaySeconds: 5
-          periodSeconds: 3
+          initialDelaySeconds: 3
+          periodSeconds: 1
         livenessProbe:
           exec:
             command:
             - service
             - telegraf
             - status
-          initialDelaySeconds: 5
-          periodSeconds: 3
+          initialDelaySeconds: 3
+          periodSeconds: 1
         imagePullPolicy: Never
