@@ -4,11 +4,9 @@ RUN apk add --no-cache --upgrade bash wget php7 --repository=http://dl-cdn.alpin
 RUN wget https://dl.grafana.com/oss/release/grafana-6.6.0.linux-amd64.tar.gz \
 && tar -zxvf grafana-6.6.0.linux-amd64.tar.gz
 
-RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.15.2_linux_amd64.tar.gz \
-&& tar -zxf telegraf-1.15.2_linux_amd64.tar.gz \
-&& cp -rf telegraf-1.15.2/etc/* /etc/ && cp -rf telegraf-1.15.2/usr/* /usr/
+RUN apk add openrc telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
-COPY ./srcs/telegraf.conf ./etc/telegraf/telegraf.conf
+COPY ./srcs/telegraf.conf ./etc/telegraf.conf
 COPY ./srcs/grafana.db .
 COPY ./srcs/setup.sh .
 
