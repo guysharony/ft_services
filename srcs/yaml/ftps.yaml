@@ -41,7 +41,7 @@ spec:
           exec:
             command:
             - /bin/sh
-            - /ft_services/script/liveness.sh
+            - /root/script/liveness.sh
           initialDelaySeconds: 3
           periodSeconds: 1
         imagePullPolicy: Never

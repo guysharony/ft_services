@@ -39,7 +39,7 @@ else
 fi
 
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=docker --addons={dashboard} --cpus=2 --disk-size='2gb' --memory='2gb'
+if minikube start --vm-driver=docker --addons=dashboard
 then
 	echo " > Minikube started successfully."
 else
@@ -61,9 +61,9 @@ kubectl apply -f srcs/yaml/config-metallb.yaml > /dev/null
 echo ""
 echo "Deployments"
 ft_deployment nginx
-ft_deployment mysql
-ft_deployment wordpress
-ft_deployment phpmyadmin
-ft_deployment influxdb
+#ft_deployment mysql
+#ft_deployment wordpress
+#ft_deployment phpmyadmin
+#ft_deployment influxdb
 ft_deployment grafana
-ft_deployment ftps
+#ft_deployment ftps

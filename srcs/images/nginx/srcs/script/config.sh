@@ -11,13 +11,13 @@ openssl req \
 	-keyout /etc/ssl/private/self-signed.key \
 	-out /etc/ssl/certs/self-signed.crt
 
-chmod 600 ft_services/sshd/ssh_host*
+chmod 600 root/sshd/ssh_host*
 
 rm /etc/nginx/nginx.conf
 
-mv /ft_services/config/nginx.conf /etc/nginx/nginx.conf
-mv /ft_services/config/telegraf.conf /etc/telegraf.conf
-mv /ft_services/sshd/ssh_host_* /etc/ssh/
+mv /root/config/nginx.conf /etc/nginx/nginx.conf
+mv /root/config/telegraf.conf /etc/telegraf.conf
+mv /root/sshd/ssh_host_* /etc/ssh/
 
 openrc
 touch /run/openrc/softlevel
