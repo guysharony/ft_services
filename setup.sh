@@ -39,14 +39,13 @@ else
 fi
 
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=docker
+if minikube start --vm-driver=docker --addons={dashboard} --cpus=2 --disk-size='2gb' --memory='2gb'
 then
 	echo " > Minikube started successfully."
 else
 	echo " > Can't start minikube."
 	exit 1
 fi
-minikube addons enable dashboard > /dev/null
 
 eval $(minikube docker-env)
 
