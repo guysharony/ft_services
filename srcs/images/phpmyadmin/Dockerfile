@@ -4,6 +4,7 @@ RUN apk add --no-cache --upgrade bash mysql php7 php7-fpm php7-mysqli php7-zlib 
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-english.tar.gz && tar -xzf phpMyAdmin-4.9.1-english.tar.gz 
 RUN apk add openrc telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
+COPY srcs/liveness.sh .
 COPY srcs/telegraf.conf ./etc/telegraf.conf
 COPY srcs/config.inc.php ./root/
 COPY srcs/setup.sh .

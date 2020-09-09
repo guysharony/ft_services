@@ -35,6 +35,13 @@ spec:
       containers:
       - name: wordpress
         image: services/wordpress
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - ./liveness.sh
+          initialDelaySeconds: 3
+          periodSeconds: 1
         ports:
         - containerPort: 5050
         imagePullPolicy: Never

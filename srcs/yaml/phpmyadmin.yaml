@@ -35,6 +35,13 @@ spec:
       containers:
       - name: phpmyadmin
         image: services/phpmyadmin
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - ./liveness.sh
+          initialDelaySeconds: 3
+          periodSeconds: 1
         ports:
         - containerPort: 5000
         imagePullPolicy: Never

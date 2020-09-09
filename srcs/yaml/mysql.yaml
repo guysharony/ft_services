@@ -45,6 +45,13 @@ spec:
       containers:
       - name: mysql
         image: services/mysql
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - ./liveness.sh
+          initialDelaySeconds: 3
+          periodSeconds: 1
         ports:
         - containerPort: 3306
         imagePullPolicy: Never

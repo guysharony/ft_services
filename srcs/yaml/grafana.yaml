@@ -35,6 +35,13 @@ spec:
       containers:
       - name: grafana
         image: services/grafana
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - ./liveness.sh
+          initialDelaySeconds: 3
+          periodSeconds: 1
         ports:
         - containerPort: 3000
         imagePullPolicy: Never

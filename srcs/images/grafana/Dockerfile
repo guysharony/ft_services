@@ -6,6 +6,7 @@ RUN wget https://dl.grafana.com/oss/release/grafana-6.6.0.linux-amd64.tar.gz \
 
 RUN apk add openrc telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
+COPY srcs/liveness.sh .
 COPY ./srcs/telegraf.conf ./etc/telegraf.conf
 COPY ./srcs/grafana.db .
 COPY ./srcs/setup.sh .

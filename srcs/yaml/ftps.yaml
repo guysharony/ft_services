@@ -37,6 +37,13 @@ spec:
       containers:
       - name: ftps
         image: services/ftps
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - ./liveness.sh
+          initialDelaySeconds: 3
+          periodSeconds: 1
         imagePullPolicy: Never
         env:
         - name: FTP_USER
