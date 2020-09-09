@@ -61,9 +61,9 @@ kubectl apply -f srcs/yaml/config-metallb.yaml > /dev/null
 echo ""
 echo "Deployments"
 ft_deployment nginx
-#ft_deployment mysql
+ft_deployment mysql
 #ft_deployment wordpress
-#ft_deployment phpmyadmin
+ft_deployment phpmyadmin
 ft_deployment influxdb
 ft_deployment grafana
 ft_deployment ftps

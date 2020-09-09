@@ -39,9 +39,9 @@ spec:
           exec:
             command:
             - /bin/sh
-            - /ft_services/script/liveness.sh
-          initialDelaySeconds: 3
-          periodSeconds: 1
+            - /root/script/liveness.sh
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 5000
         imagePullPolicy: Never
