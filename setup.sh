@@ -62,7 +62,7 @@ echo ""
 echo "Deployments"
 ft_deployment nginx
 ft_deployment mysql
-#ft_deployment wordpress
+ft_deployment wordpress
 ft_deployment phpmyadmin
 ft_deployment influxdb
 ft_deployment grafana

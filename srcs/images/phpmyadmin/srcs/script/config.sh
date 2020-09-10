@@ -1,3 +1,4 @@
+mv /root/config/telegraf.conf /etc/telegraf.conf
 mv phpMyAdmin-4.9.1-english ./www
 rm -rf ./www/config.sample.inc.php
 mv /root/config/config.inc.php ./www
