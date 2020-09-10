@@ -12,11 +12,6 @@ openssl req -x509 \
 
 chmod 744 /etc/ssl/private/pure-ftpd.pem
 
-mkdir -p /ftps/$FTP_USER
-adduser -h /ftps/$FTP_USER -D $FTP_USER
-
-echo "$FTP_USER:$FTP_PASSWORD" | chpasswd
-
 openrc
 touch /run/openrc/softlevel
 rc-update add telegraf
