@@ -39,7 +39,7 @@ else
 fi
 
 echo " > Starting minikube, please wait."
-if minikube start --vm-driver=docker --addons=dashboard
+if minikube start --vm-driver=docker --addons={dashboard,metrics-server}
 then
 	echo " > Minikube started successfully."
 else
