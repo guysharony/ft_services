@@ -7,8 +7,6 @@ COPY srcs/script /root/script
 COPY srcs/config /root/config
 COPY srcs/files /root/files
 
-RUN /root/script/config.sh
-
 EXPOSE 3306
 
 CMD /root/script/setup.sh
