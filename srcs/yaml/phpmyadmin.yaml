@@ -9,6 +9,7 @@ spec:
   loadBalancerIP: 172.17.0.6
   ports:
   - port: 5000
+    targetPort: 5000
     protocol: TCP
     name: http
   selector:

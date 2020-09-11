@@ -8,9 +8,11 @@ spec:
   loadBalancerIP: 172.17.0.9
   ports:
   - port: 21
+    targetPort: 21
     protocol: TCP
     name: ftps
   - port: 21000
+    targetPort: 21000
     protocol: TCP
     name: ftps-data
   selector:
